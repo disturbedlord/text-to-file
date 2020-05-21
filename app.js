@@ -20,7 +20,7 @@ document.getElementById("download_btn").addEventListener("click", function(){
 
 
 
-    download(filename.value(), text.value());
+    download(fileName.value, text.value);
 }, false);
 
 // reset Button working
