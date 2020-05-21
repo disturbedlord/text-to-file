@@ -1,0 +1,53 @@
+body , html {
+  font-family: 'Jost', sans-serif;
+}
+
+.brandName{
+  position: relative;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  top: -30px;
+}
+
+.form{
+  position: relative;
+  top: -30px;
+  display: grid;
+  justify-content: space-around;
+}
+
+.dwn_btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#download_btn{
+  border: 2px solid black;
+  border-radius: 05px;
+  background-color: transparent;
+  font-family: 'Jost', sans-serif;
+  font-size: 2rem;
+}
+
+.reset-btn{
+  position: relative;
+  display: flex;
+  align-self: center;
+  left: 50px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#resetImg{
+  height: 2rem;
+  width: 2rem;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-self: baseline;
+}

@@ -3,37 +3,48 @@
   <head>
     <meta charset="utf-8">
     <title>Text to File</title>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+    <!-- fontAwesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <form>
-      Filename : <input id = "fileName" type="text" name="fileName"> 
-        <br>
-      Text : <textarea id = "textarea" name="textarea" rows="8" cols="80"></textarea>
-    </form>
-    <button id = "dwn-btn">Download</button>
 
-    <script>
-      function download(filename, text) {
-        var element = document.createElement('a');
-        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-        element.setAttribute('download', filename);
+    <p class="brandName">txtFILE</p>
 
-        element.style.display = 'none';
-        document.body.appendChild(element);
+    <div class="form" >
+      <!-- filename field -->
+      <input style = "
+        font-family: 'Jost', sans-serif;
+        padding: 10px;
+        font-size : 1.5rem;"
+        type="text"
+        placeholder="File Name with extension..."
+        name="fileName"
+        id="fileName"
+      >
+      <br>
+      <!-- text Input -->
+      <textarea style = "font-family: 'Jost', sans-serif;
+      padding: 10px;
+      font-size : 1.5rem;" id="textarea" placeholder="Paste your Text here..." name="textarea" rows="8" cols="80"></textarea>
+      <br>
+    </div>
 
-        element.click();
+<!-- download and reset Button -->
+    <div class="dwn_btn">
+      <button id = "download_btn">Download</button>
+      <div class="reset-btn" id="reset_btn">
+        <img id="resetImg" src="img/reset.svg" alt="reset data"/>
+      </div>
+    </div>
 
-        document.body.removeChild(element);
-      }
 
-      document.getElementById("dwn-btn").addEventListener("click", function(){
-    // Generate download of hello.txt file with some content
-          var text = document.getElementById("textarea").value;
-          var filename = document.getElementById('fileName').value;
+    <script src="app.js" charset="utf-8"></script>
 
-          download(filename, text);
-      }, false);
-    </script>
-
+    <footer class="footer">
+      <p>Developed by <a style="text-decoration: none;" href="https://www.google.com"/>Avinash</a>.</p>
+    </footer>
   </body>
 </html>
