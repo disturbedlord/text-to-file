@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Text to File</title>
+  </head>
+  <body>
+    <form>
+      Filename : <input id = "fileName" type="text" name="fileName"> 
+        <br>
+      Text : <textarea id = "textarea" name="textarea" rows="8" cols="80"></textarea>
+    </form>
+    <button id = "dwn-btn">Download</button>
+
+    <script>
+      function download(filename, text) {
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+      }
+
+      document.getElementById("dwn-btn").addEventListener("click", function(){
+    // Generate download of hello.txt file with some content
+          var text = document.getElementById("textarea").value;
+          var filename = document.getElementById('fileName').value;
+
+          download(filename, text);
+      }, false);
+    </script>
+
+  </body>
+</html>
