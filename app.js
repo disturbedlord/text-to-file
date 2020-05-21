@@ -17,10 +17,9 @@ function download(filename, text) {
 
 // Download Button working
 document.getElementById("download_btn").addEventListener("click", function(){
-
-
-
-    download(fileName.value, text.value);
+    if(fileName.value != "" && text.value != ""){
+      download(fileName.value, text.value);
+    }
 }, false);
 
 // reset Button working
